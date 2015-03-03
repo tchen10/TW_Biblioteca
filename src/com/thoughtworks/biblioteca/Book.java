@@ -8,11 +8,15 @@ import java.util.ArrayList;
  */
 public class Book {
     private String title;
+    private String author;
+    private int yearPublished;
     private PrintStream printStream;
     private static ArrayList<Book> books = new ArrayList<Book>();
 
-    public Book(String title, PrintStream printStream) {
+    public Book(String title, String author, int yearPublished, PrintStream printStream) {
         this.title = title;
+        this.author = author;
+        this.yearPublished = yearPublished;
         this.printStream = printStream;
         books.add(this);
     }
