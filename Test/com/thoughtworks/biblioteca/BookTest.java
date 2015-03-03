@@ -43,19 +43,5 @@ public class BookTest {
         verify(printStream).println("Book Title1 | Author1 | 2001");
     }
 
-//    @Test
-//    public void shouldDisplayAllBookDetailsForAllBooksInBooksClass() {
-//        PrintStream printStream = mock(PrintStream.class);
-//        Book book1 = new Book("Book Title1", "Author1", 2001, printStream);
-//        Book book2 = new Book("Book Title2", "Author2", 2002, printStream);
-//        Book book3 = new Book("Book Title3", "Author3", 2003, printStream);
-//
-//        Book.printAllBookDetails();
-//
-//        verify(printStream).println("Title | Author | Year Published");
-//        verify(printStream).println("Book Title1 | Author1 | 2001");
-//        verify(printStream).println("Book Title2 | Author2 | 2002");
-//        verify(printStream).println("Book Title3 | Author3 | 2003");
-//
-//    }
+
 }
