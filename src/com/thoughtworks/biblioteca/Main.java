@@ -9,6 +9,6 @@ public class Main {
         welcome.display();
         Book book1 = new Book("TDD", "Kent Beck", 2000, System.out);
         Book book2 = new Book("RoR", "Katz", 2005, System.out);
-        Book.printAllBookTitles();
+//        Book.printAllBookTitles();
     }
 }
