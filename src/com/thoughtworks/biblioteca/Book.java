@@ -25,7 +25,7 @@ public class Book {
     }
 
     public void printAllDetails() {
-        printStream.println(title + " | " + author + " | " + yearPublished);
+        printStream.println(title + " |" + author + " | " + yearPublished);
     }
 
 
