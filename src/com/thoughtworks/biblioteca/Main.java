@@ -1,5 +1,7 @@
 package com.thoughtworks.biblioteca;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +10,12 @@ public class Main {
         Welcome welcome = new Welcome(System.out);
         welcome.display();
 
-        library().printAllBookDetails();
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        List<String> options = new ArrayList<>();
+        Menu menu = new Menu(System.out, reader,library(), options);
+        menu.start();
+
     }
 
     private static Library library() {
