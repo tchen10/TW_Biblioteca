@@ -14,7 +14,7 @@ public class Library {
     }
 
     public void printAllBookDetails() {
-        printStream.println("Title | Author | Year Published");
+        printStream.printf("%-10s %-10s %-10s\n", "Title", "Author", "Year Published");
         for (Book book : books) {
             book.printAllDetails();
         }

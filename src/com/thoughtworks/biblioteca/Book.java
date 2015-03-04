@@ -21,7 +21,9 @@ public class Book {
     }
 
     public void printAllDetails() {
-        printStream.println(title + " | " + author + " | " + yearPublished);
+
+        String yearPublishedString = yearPublished + "";
+        printStream.printf("%-10s %-10s %-10s\n", title, author, yearPublishedString);
     }
 
 

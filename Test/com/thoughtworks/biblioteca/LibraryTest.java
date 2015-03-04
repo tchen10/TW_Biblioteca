@@ -44,7 +44,7 @@ public class LibraryTest {
     @Test
     public void shouldDisplayListHeaderForBookDetails() {
         library.printAllBookDetails();
-        verify(printStream).println("Title | Author | Year Published");
+        verify(printStream).printf("%-10s %-10s %-10s\n", "Title", "Author", "Year Published");
     }
 
     private Book addBookToLibrary() {

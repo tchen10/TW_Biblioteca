@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import java.io.PrintStream;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
@@ -27,7 +26,7 @@ public class BookTest {
 
         book1.printAllDetails();
 
-        verify(printStream).println("Book Title1 | Author1 | 2001");
+        verify(printStream).printf("%-10s %-10s %-10s\n", "Book Title1", "Author1", "2001");
     }
 
 
