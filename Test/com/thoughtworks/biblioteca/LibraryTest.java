@@ -1,42 +1,56 @@
 package com.thoughtworks.biblioteca;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 public class LibraryTest {
+
+    private PrintStream printStream;
+    private Library library;
+    private List<Book> books;
+
+    @Before
+    public void setUp() throws Exception {
+        printStream = mock(PrintStream.class);
+        books = new ArrayList<>();
+        library = new Library(printStream, books);
+    }
+
     @Test
     public void shouldAddOneBookToBooksArrayList(){
-        PrintStream printStream = mock(PrintStream.class);
-        Library library = new Library(printStream);
-
-        Book book = new Book("Book Title1", "Author1", 2001, printStream);
-
-        library.addBook(book);
-
-        assertEquals(library.getBooks().size(), 1);
+        Book book = addBookToLibrary();
+        library.printAllBookDetails();
+        verify(book).printAllDetails();
     }
+
     @Test
     public void shouldDisplayAllBookDetailsForAllBooksInBooksClass() {
-        PrintStream printStream = mock(PrintStream.class);
-        Library library = new Library(printStream);
-        Book book1 = new Book("Book Title1", "Author1", 2001, printStream);
-        Book book2 = new Book("Book Title2", "Author2", 2002, printStream);
-        Book book3 = new Book("Book Title3", "Author3", 2003, printStream);
-        library.addBook(book1);
-        library.addBook(book2);
-        library.addBook(book3);
+        Book book = addBookToLibrary();
+        Book book2 = addBookToLibrary();
 
         library.printAllBookDetails();
-dsvdvsd
+
+        verify(book).printAllDetails();
+        verify(book2).printAllDetails();
+    }
+
+    @Test
+    public void shouldDisplayListHeaderForBookDetails() {
+        library.printAllBookDetails();
         verify(printStream).println("Title | Author | Year Published");
-        verify(printStream).println("Book Title1 | Author1 | 2001");
-        verify(printStream).println("Book Title2 | Author2 | 2002");
-        verify(printStream).println("Book Title3 | Author3 | 2003");
+    }
+
+    private Book addBookToLibrary() {
+        Book book = mock(Book.class);
+        books.add(book);
+        return book;
     }
 
 }

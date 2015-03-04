@@ -1,11 +1,7 @@
 package com.thoughtworks.biblioteca;
 
 import java.io.PrintStream;
-import java.util.ArrayList;
 
-/**
- * Created by sradloff on 3/3/15.
- */
 public class Book {
     private String title;
     private String author;
@@ -25,7 +21,7 @@ public class Book {
     }
 
     public void printAllDetails() {
-        printStream.println(title + " |" + author + " | " + yearPublished);
+        printStream.println(title + " | " + author + " | " + yearPublished);
     }
 
 
