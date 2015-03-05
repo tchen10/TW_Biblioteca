@@ -55,7 +55,7 @@ public class MenuTest {
         when(reader.readLine()).thenReturn("asdkfj");
         menu.displayOptionsAndPromptUser();
         verify(printStream).println("Select a valid option!");
-//        verify(printStream).println("Please Enter An Option");
+        verify(printStream).println("Please Enter An Option");
     }
 
 }
